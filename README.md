@@ -18,5 +18,6 @@
 <div>
   <h2>Links</h2>
   <a href="https://lucid.app/lucidchart/afa09e35-79d5-4105-bda8-a293e4ade07b/edit?viewport_loc=-512%2C119%2C2952%2C1379%2C0_0&invitationId=inv_a9e75ef8-fc0c-42ec-a77b-c31bcd558140">Data Models</a><br>
-  <a href="https://www.canva.com/design/DAGengM2qZE/8DFK5_8au055cVfl3ZQF5A/view?utm_content=DAGengM2qZE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hd85bbc5f64">Designs</a>
+  <a href="https://www.canva.com/design/DAGengM2qZE/8DFK5_8au055cVfl3ZQF5A/view?utm_content=DAGengM2qZE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hd85bbc5f64">Wireframe</a>
+  <a href="https://www.figma.com/design/ePJ7HZc0onTiFGpoggoqRG/Rentbuddy?node-id=0-1&t=ywZd0xUmv6R8WZRs-1">Design</a>
 </div>
