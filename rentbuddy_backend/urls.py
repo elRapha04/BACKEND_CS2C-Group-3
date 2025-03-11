@@ -27,4 +27,3 @@ urlpatterns = [
     path('', home),  # This adds a homepage
     path('auth/', include('authentication.urls')),
 ]
-
