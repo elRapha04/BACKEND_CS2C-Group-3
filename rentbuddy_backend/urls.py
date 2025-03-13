@@ -17,11 +17,11 @@ Including another URLconf
 # rentbuddy_backend/urls.py
 
 from django.contrib import admin
-from django.urls import path, include  # Import include for future use
-from accounts.views import SignupView, LoginView  # Import the views
+from django.urls import path, include 
+from accounts.views import RegisterView, LoginView 
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # Admin panel URL
-    path('api/accounts/signup/', SignupView.as_view(), name='signup'),  # Signup endpoint
-    path('api/accounts/login/', LoginView.as_view(), name='login'),  # Login endpoint
+    path('register/', RegisterView.as_view(), name='register'),  # Signup endpoint
+    path('login/', LoginView.as_view(), name='login'),  # Login endpoint
 ]
