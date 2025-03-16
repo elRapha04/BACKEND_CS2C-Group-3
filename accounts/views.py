@@ -31,10 +31,10 @@ class RegisterView(APIView):
         print("Received data:", request.data)  # Debugging
         serializer = UserSerializer(data=request.data)
 
-        print(serializer.errors)
-
         if serializer.is_valid():
             user = serializer.save()
             token, created = Token.objects.get_or_create(user=user)
             return Response({"message": "User created", "token": token.key}, status=status.HTTP_201_CREATED)
+
+        print("Validation errors:", serializer.errors)  # Debugging
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
