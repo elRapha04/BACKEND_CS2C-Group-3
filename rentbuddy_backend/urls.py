@@ -15,13 +15,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 # rentbuddy_backend/urls.py
-
 from django.contrib import admin
-from django.urls import path, include 
-from accounts.views import RegisterView, LoginView 
+from django.urls import path, include  
 
 urlpatterns = [
-    path('admin/', admin.site.urls),  # Admin panel URL
-    path('register/', RegisterView.as_view(), name='register'),  # Signup endpoint
-    path('login/', LoginView.as_view(), name='login'),  # Login endpoint
+    path('admin/', admin.site.urls),
+    path('api/accounts/', include('accounts.urls')),  # Include accounts URLs
 ]
