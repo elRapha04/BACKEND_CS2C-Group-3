@@ -30,6 +30,9 @@ class RegisterView(APIView):
     def post(self, request, *args, **kwargs):
         print("Received data:", request.data)  # Debugging
         serializer = UserSerializer(data=request.data)
+
+        print(serializer.errors)
+
         if serializer.is_valid():
             user = serializer.save()
             token, created = Token.objects.get_or_create(user=user)
