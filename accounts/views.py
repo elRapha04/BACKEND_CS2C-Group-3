@@ -1,3 +1,4 @@
+from rest_framework.views import APIView
 from rest_framework import generics
 from django.contrib.auth import authenticate
 from rest_framework.response import Response
@@ -24,6 +25,13 @@ class LoginView(generics.GenericAPIView):
         return Response({"error": "Invalid credentials"}, status=status.HTTP_401_UNAUTHORIZED)
 
 # User Registration View
-class RegisterView(generics.CreateAPIView):
-    queryset = CustomUser.objects.all()
-    serializer_class = UserSerializer
+
+class RegisterView(APIView):
+    def post(self, request, *args, **kwargs):
+        print("Received data:", request.data)  # Debugging
+        serializer = UserSerializer(data=request.data)
+        if serializer.is_valid():
+            user = serializer.save()
+            token, created = Token.objects.get_or_create(user=user)
+            return Response({"message": "User created", "token": token.key}, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

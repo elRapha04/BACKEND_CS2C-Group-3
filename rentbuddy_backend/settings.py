@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-7&gsx$b$2rpcww(tc_0%3tmy2*6bbi1n&3u#yu!a5-l^53qv7v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '10.0.2.2', '192.168.1.32', 'localhost']
 
 
 # Application definition
@@ -156,3 +156,21 @@ ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = True
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
