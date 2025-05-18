@@ -40,10 +40,12 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'rest_framework.authtoken',
-    'accounts',
     'django.contrib.sites',  # Required for allauth
     'allauth',
     'allauth.account',
+    
+    'accounts',
+    'rentals',
     
 ]
 
